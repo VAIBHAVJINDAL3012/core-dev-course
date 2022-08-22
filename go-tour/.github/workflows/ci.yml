@@ -1,4 +1,11 @@
 name: CI
+on:
+  push:
+    branches:
+      - "main"
+  pull_request:
+    branches:
+      - "**"
 jobs:
   tests:
     if: (github.event.action != 'closed' || github.event.pull_request.merged == true)
